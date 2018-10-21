@@ -49,7 +49,6 @@ namespace BinaryFileHandlingTool
                 {
                     stw.WriteLine(txtString.Text);
                     MessageBox.Show("File saved successfully");
-                    MessageBox.Show("Hello");
                     txtString.Text = "";
                 }
             }
