@@ -107,6 +107,5 @@ namespace BinaryFileHandlingTool
                 txtBinaryFile.Text = s;
             }
         }
-
     }
 }
