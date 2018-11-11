@@ -28,68 +28,199 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnSave = new System.Windows.Forms.Button();
-            this.btnOpenFile = new System.Windows.Forms.Button();
-            this.txtString = new System.Windows.Forms.RichTextBox();
+            this.txtBinaryFile = new System.Windows.Forms.TextBox();
+            this.lblBinary = new System.Windows.Forms.Label();
+            this.lblNewFormat = new System.Windows.Forms.Label();
+            this.txtFormat = new System.Windows.Forms.TextBox();
+            this.txtIterations = new System.Windows.Forms.TextBox();
+            this.btnSaveFormat = new System.Windows.Forms.Button();
+            this.txtUsedFormats = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtTextFile = new System.Windows.Forms.TextBox();
+            this.lblText = new System.Windows.Forms.Label();
+            this.pbUpload = new System.Windows.Forms.PictureBox();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUpload)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSave
             // 
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(322, 324);
+            this.btnSave.Location = new System.Drawing.Point(453, 186);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(121, 50);
+            this.btnSave.Size = new System.Drawing.Size(103, 28);
             this.btnSave.TabIndex = 17;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "browse";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // btnOpenFile
+            // txtBinaryFile
             // 
-            this.btnOpenFile.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOpenFile.Location = new System.Drawing.Point(14, 15);
-            this.btnOpenFile.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.btnOpenFile.Name = "btnOpenFile";
-            this.btnOpenFile.Size = new System.Drawing.Size(133, 73);
-            this.btnOpenFile.TabIndex = 16;
-            this.btnOpenFile.Text = "Open File";
-            this.btnOpenFile.UseVisualStyleBackColor = true;
-            this.btnOpenFile.Click += new System.EventHandler(this.btnOpenFile_Click);
+            this.txtBinaryFile.Enabled = false;
+            this.txtBinaryFile.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBinaryFile.Location = new System.Drawing.Point(12, 43);
+            this.txtBinaryFile.Multiline = true;
+            this.txtBinaryFile.Name = "txtBinaryFile";
+            this.txtBinaryFile.Size = new System.Drawing.Size(245, 135);
+            this.txtBinaryFile.TabIndex = 18;
+            this.txtBinaryFile.TextChanged += new System.EventHandler(this.txtBinaryFile_TextChanged);
             // 
-            // txtString
+            // lblBinary
             // 
-            this.txtString.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtString.Location = new System.Drawing.Point(14, 95);
-            this.txtString.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtString.Name = "txtString";
-            this.txtString.Size = new System.Drawing.Size(429, 221);
-            this.txtString.TabIndex = 15;
-            this.txtString.Text = "";
+            this.lblBinary.AutoSize = true;
+            this.lblBinary.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBinary.Location = new System.Drawing.Point(8, 19);
+            this.lblBinary.Name = "lblBinary";
+            this.lblBinary.Size = new System.Drawing.Size(165, 21);
+            this.lblBinary.TabIndex = 19;
+            this.lblBinary.Text = "Input the binary file:";
+            // 
+            // lblNewFormat
+            // 
+            this.lblNewFormat.AutoSize = true;
+            this.lblNewFormat.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNewFormat.Location = new System.Drawing.Point(12, 193);
+            this.lblNewFormat.Name = "lblNewFormat";
+            this.lblNewFormat.Size = new System.Drawing.Size(107, 21);
+            this.lblNewFormat.TabIndex = 20;
+            this.lblNewFormat.Text = "New format:";
+            // 
+            // txtFormat
+            // 
+            this.txtFormat.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFormat.Location = new System.Drawing.Point(12, 217);
+            this.txtFormat.Multiline = true;
+            this.txtFormat.Name = "txtFormat";
+            this.txtFormat.Size = new System.Drawing.Size(245, 65);
+            this.txtFormat.TabIndex = 21;
+            this.txtFormat.TextChanged += new System.EventHandler(this.txtFormat_TextChanged);
+            // 
+            // txtIterations
+            // 
+            this.txtIterations.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIterations.ForeColor = System.Drawing.Color.Gray;
+            this.txtIterations.Location = new System.Drawing.Point(12, 288);
+            this.txtIterations.Name = "txtIterations";
+            this.txtIterations.Size = new System.Drawing.Size(245, 22);
+            this.txtIterations.TabIndex = 22;
+            this.txtIterations.Text = "Number of iterations";
+            this.txtIterations.TextChanged += new System.EventHandler(this.txtIterations_TextChanged);
+            this.txtIterations.Enter += new System.EventHandler(this.txtIterations_Enter);
+            this.txtIterations.Leave += new System.EventHandler(this.txtIterations_Leave);
+            // 
+            // btnSaveFormat
+            // 
+            this.btnSaveFormat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaveFormat.Location = new System.Drawing.Point(12, 316);
+            this.btnSaveFormat.Name = "btnSaveFormat";
+            this.btnSaveFormat.Size = new System.Drawing.Size(121, 50);
+            this.btnSaveFormat.TabIndex = 23;
+            this.btnSaveFormat.Text = "Save";
+            this.btnSaveFormat.UseVisualStyleBackColor = true;
+            // 
+            // txtUsedFormats
+            // 
+            this.txtUsedFormats.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsedFormats.Location = new System.Drawing.Point(12, 406);
+            this.txtUsedFormats.Multiline = true;
+            this.txtUsedFormats.Name = "txtUsedFormats";
+            this.txtUsedFormats.Size = new System.Drawing.Size(245, 65);
+            this.txtUsedFormats.TabIndex = 24;
+            this.txtUsedFormats.TextChanged += new System.EventHandler(this.txtUsedFormats_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 382);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(227, 21);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "List of recently used formats:";
+            // 
+            // txtTextFile
+            // 
+            this.txtTextFile.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTextFile.Location = new System.Drawing.Point(311, 43);
+            this.txtTextFile.Multiline = true;
+            this.txtTextFile.Name = "txtTextFile";
+            this.txtTextFile.Size = new System.Drawing.Size(245, 135);
+            this.txtTextFile.TabIndex = 26;
+            this.txtTextFile.TextChanged += new System.EventHandler(this.txtTextFile_TextChanged);
+            // 
+            // lblText
+            // 
+            this.lblText.AutoSize = true;
+            this.lblText.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblText.Location = new System.Drawing.Point(307, 19);
+            this.lblText.Name = "lblText";
+            this.lblText.Size = new System.Drawing.Size(159, 21);
+            this.lblText.TabIndex = 27;
+            this.lblText.Text = "Text file converted:";
+            // 
+            // pbUpload
+            // 
+            this.pbUpload.BackColor = System.Drawing.Color.Transparent;
+            this.pbUpload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbUpload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbUpload.Image = ((System.Drawing.Image)(resources.GetObject("pbUpload.Image")));
+            this.pbUpload.Location = new System.Drawing.Point(84, 81);
+            this.pbUpload.Name = "pbUpload";
+            this.pbUpload.Size = new System.Drawing.Size(99, 60);
+            this.pbUpload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbUpload.TabIndex = 28;
+            this.pbUpload.TabStop = false;
+            this.pbUpload.Click += new System.EventHandler(this.pbUpload_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 389);
+            this.ClientSize = new System.Drawing.Size(572, 486);
+            this.Controls.Add(this.pbUpload);
+            this.Controls.Add(this.lblText);
+            this.Controls.Add(this.txtTextFile);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtUsedFormats);
+            this.Controls.Add(this.btnSaveFormat);
+            this.Controls.Add(this.txtIterations);
+            this.Controls.Add(this.txtFormat);
+            this.Controls.Add(this.lblNewFormat);
+            this.Controls.Add(this.lblBinary);
+            this.Controls.Add(this.txtBinaryFile);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnOpenFile);
-            this.Controls.Add(this.txtString);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
             this.Name = "Form1";
-            this.ShowIcon = false;
-            this.Text = "Form1Binary File Handling Tool";
+            this.Text = "Binary File Handling Tool";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbUpload)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnOpenFile;
-        private System.Windows.Forms.RichTextBox txtString;
+        private System.Windows.Forms.TextBox txtBinaryFile;
+        private System.Windows.Forms.Label lblBinary;
+        private System.Windows.Forms.Label lblNewFormat;
+        private System.Windows.Forms.TextBox txtFormat;
+        private System.Windows.Forms.TextBox txtIterations;
+        private System.Windows.Forms.Button btnSaveFormat;
+        private System.Windows.Forms.TextBox txtUsedFormats;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtTextFile;
+        private System.Windows.Forms.Label lblText;
+        private System.Windows.Forms.PictureBox pbUpload;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 

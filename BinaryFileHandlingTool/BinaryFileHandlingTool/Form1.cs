@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Threading.Tasks;
+using System.Linq;
 using System.Windows.Forms;
+using System.Drawing;
+using System.Drawing.Drawing2D;
 
 namespace BinaryFileHandlingTool
 {
@@ -29,29 +33,80 @@ namespace BinaryFileHandlingTool
             return Encoding.ASCII.GetString(byteList.ToArray());
         }
 
-        private void btnOpenFile_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sd = new SaveFileDialog();
+            sd.Title = "Save text Files";
+            sd.DefaultExt = "txt";
+            sd.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            sd.FilterIndex = 2;
+            if (sd.ShowDialog() == DialogResult.OK)
+            {
+                using (StreamWriter sw = new StreamWriter(sd.FileName))
+                {
+                    sw.Write(txtTextFile.Text);
+                }
+            }
+        }
+
+        private void txtBinaryFile_TextChanged(object sender, EventArgs e)
+        {
+            txtBinaryFile.ScrollBars = ScrollBars.Both;
+            if(txtBinaryFile.Text != "")
+            {
+                txtBinaryFile.Enabled = true;
+                pbUpload.Visible = false;
+            }
+        }
+
+        private void txtFormat_TextChanged(object sender, EventArgs e)
+        {
+            txtFormat.ScrollBars = ScrollBars.Both;
+        }
+
+        private void txtIterations_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtIterations_Enter(object sender, EventArgs e)
+        {
+            if (txtIterations.Text == "Number of iterations")
+            {
+                txtIterations.Text = "";
+                txtIterations.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtIterations_Leave(object sender, EventArgs e)
+        {
+            if (txtIterations.Text == "")
+            {
+                txtIterations.Text = "Number of iterations";
+                txtIterations.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtUsedFormats_TextChanged(object sender, EventArgs e)
+        {
+            txtUsedFormats.ScrollBars = ScrollBars.Both;
+        }
+
+        private void txtTextFile_TextChanged(object sender, EventArgs e)
+        {
+            txtTextFile.ScrollBars = ScrollBars.Both;
+        }
+
+        private void pbUpload_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 string asci = File.ReadAllText(ofd.FileName);
                 string s = BinaryToString(asci);
-                txtString.Text = s;
+                txtBinaryFile.Text = s;
             }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            string value = "";
-            if (inputBox.InputBox("New file", "New file name:", ref value) == DialogResult.OK)
-            {
-                using (StreamWriter stw = new StreamWriter(value + ".txt"))
-                {
-                    stw.WriteLine(txtString.Text);
-                    MessageBox.Show("File saved successfully");
-                    txtString.Text = "";
-                }
-            }
-        }
     }
 }
