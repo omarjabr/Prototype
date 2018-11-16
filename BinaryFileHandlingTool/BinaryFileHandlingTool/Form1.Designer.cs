@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnSave = new System.Windows.Forms.Button();
-            this.txtBinaryFile = new System.Windows.Forms.TextBox();
             this.lblBinary = new System.Windows.Forms.Label();
             this.lblNewFormat = new System.Windows.Forms.Label();
             this.txtFormat = new System.Windows.Forms.TextBox();
@@ -42,7 +42,21 @@
             this.lblText = new System.Windows.Forms.Label();
             this.pbUpload = new System.Windows.Forms.PictureBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.bFHT_DBDataSet = new BinaryFileHandlingTool.BFHT_DBDataSet();
+            this.binaryfilesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.binaryfilesTableAdapter = new BinaryFileHandlingTool.BFHT_DBDataSetTableAdapters.binaryfilesTableAdapter();
+            this.bFHTDataSet = new BinaryFileHandlingTool.BFHTDataSet();
+            this.binaryfileBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.binaryfileTableAdapter = new BinaryFileHandlingTool.BFHTDataSetTableAdapters.binaryfileTableAdapter();
+            this.bfnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbUpload)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bFHT_DBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.binaryfilesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bFHTDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.binaryfileBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSave
@@ -57,17 +71,6 @@
             this.btnSave.Text = "browse";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // txtBinaryFile
-            // 
-            this.txtBinaryFile.Enabled = false;
-            this.txtBinaryFile.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBinaryFile.Location = new System.Drawing.Point(12, 43);
-            this.txtBinaryFile.Multiline = true;
-            this.txtBinaryFile.Name = "txtBinaryFile";
-            this.txtBinaryFile.Size = new System.Drawing.Size(245, 135);
-            this.txtBinaryFile.TabIndex = 18;
-            this.txtBinaryFile.TextChanged += new System.EventHandler(this.txtBinaryFile_TextChanged);
             // 
             // lblBinary
             // 
@@ -168,19 +171,84 @@
             this.pbUpload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbUpload.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbUpload.Image = ((System.Drawing.Image)(resources.GetObject("pbUpload.Image")));
-            this.pbUpload.Location = new System.Drawing.Point(84, 81);
+            this.pbUpload.Location = new System.Drawing.Point(78, 47);
             this.pbUpload.Name = "pbUpload";
-            this.pbUpload.Size = new System.Drawing.Size(99, 60);
+            this.pbUpload.Size = new System.Drawing.Size(41, 28);
             this.pbUpload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbUpload.TabIndex = 28;
             this.pbUpload.TabStop = false;
+            this.pbUpload.LoadCompleted += new System.ComponentModel.AsyncCompletedEventHandler(this.pbUpload_LoadCompleted);
             this.pbUpload.Click += new System.EventHandler(this.pbUpload_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 54);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 17);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "UPLOAD";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.bfnameDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.binaryfileBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 81);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(245, 109);
+            this.dataGridView1.TabIndex = 31;
+            this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
+            // 
+            // bFHT_DBDataSet
+            // 
+            this.bFHT_DBDataSet.DataSetName = "BFHT_DBDataSet";
+            this.bFHT_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // binaryfilesBindingSource
+            // 
+            this.binaryfilesBindingSource.DataMember = "binaryfiles";
+            this.binaryfilesBindingSource.DataSource = this.bFHT_DBDataSet;
+            // 
+            // binaryfilesTableAdapter
+            // 
+            this.binaryfilesTableAdapter.ClearBeforeFill = true;
+            // 
+            // bFHTDataSet
+            // 
+            this.bFHTDataSet.DataSetName = "BFHTDataSet";
+            this.bFHTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // binaryfileBindingSource
+            // 
+            this.binaryfileBindingSource.DataMember = "binaryfile";
+            this.binaryfileBindingSource.DataSource = this.bFHTDataSet;
+            // 
+            // binaryfileTableAdapter
+            // 
+            this.binaryfileTableAdapter.ClearBeforeFill = true;
+            // 
+            // bfnameDataGridViewTextBoxColumn
+            // 
+            this.bfnameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.bfnameDataGridViewTextBoxColumn.DataPropertyName = "bf_name";
+            this.bfnameDataGridViewTextBoxColumn.HeaderText = "File name";
+            this.bfnameDataGridViewTextBoxColumn.Name = "bfnameDataGridViewTextBoxColumn";
+            this.bfnameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(572, 486);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.pbUpload);
             this.Controls.Add(this.lblText);
             this.Controls.Add(this.txtTextFile);
@@ -191,7 +259,6 @@
             this.Controls.Add(this.txtFormat);
             this.Controls.Add(this.lblNewFormat);
             this.Controls.Add(this.lblBinary);
-            this.Controls.Add(this.txtBinaryFile);
             this.Controls.Add(this.btnSave);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -201,6 +268,11 @@
             this.Text = "Binary File Handling Tool";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbUpload)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bFHT_DBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.binaryfilesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bFHTDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.binaryfileBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,7 +281,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.TextBox txtBinaryFile;
         private System.Windows.Forms.Label lblBinary;
         private System.Windows.Forms.Label lblNewFormat;
         private System.Windows.Forms.TextBox txtFormat;
@@ -221,6 +292,15 @@
         private System.Windows.Forms.Label lblText;
         private System.Windows.Forms.PictureBox pbUpload;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private BFHT_DBDataSet bFHT_DBDataSet;
+        private System.Windows.Forms.BindingSource binaryfilesBindingSource;
+        private BFHT_DBDataSetTableAdapters.binaryfilesTableAdapter binaryfilesTableAdapter;
+        private BFHTDataSet bFHTDataSet;
+        private System.Windows.Forms.BindingSource binaryfileBindingSource;
+        private BFHTDataSetTableAdapters.binaryfileTableAdapter binaryfileTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bfnameDataGridViewTextBoxColumn;
     }
 }
 

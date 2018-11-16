@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Drawing;
 using System.IO;
 using System.Text;
-using System.Threading.Tasks;
-using System.Linq;
 using System.Windows.Forms;
-using System.Drawing;
-using System.Drawing.Drawing2D;
+using System.Diagnostics;
+using System.Data;
 
 namespace BinaryFileHandlingTool
 {
     public partial class Form1 : Form
     {
+        SqlConnection con = new SqlConnection("Data Source=Omar-Jabr;Initial Catalog=BFHT;Integrated Security=True");
         public Form1()
         {
             InitializeComponent();
@@ -19,6 +20,10 @@ namespace BinaryFileHandlingTool
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'bFHTDataSet.binaryfile' table. You can move, or remove it, as needed.
+            this.binaryfileTableAdapter.Fill(this.bFHTDataSet.binaryfile);
+            // TODO: This line of code loads data into the 'bFHT_DBDataSet.binaryfiles' table. You can move, or remove it, as needed.
+            this.binaryfilesTableAdapter.Fill(this.bFHT_DBDataSet.binaryfiles);
 
         }
         // Convert Class Binary To String
@@ -46,16 +51,6 @@ namespace BinaryFileHandlingTool
                 {
                     sw.Write(txtTextFile.Text);
                 }
-            }
-        }
-
-        private void txtBinaryFile_TextChanged(object sender, EventArgs e)
-        {
-            txtBinaryFile.ScrollBars = ScrollBars.Both;
-            if(txtBinaryFile.Text != "")
-            {
-                txtBinaryFile.Enabled = true;
-                pbUpload.Visible = false;
             }
         }
 
@@ -99,13 +94,39 @@ namespace BinaryFileHandlingTool
 
         private void pbUpload_Click(object sender, EventArgs e)
         {
+            con.Open();
             OpenFileDialog ofd = new OpenFileDialog();
+
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                string asci = File.ReadAllText(ofd.FileName);
-                string s = BinaryToString(asci);
-                txtBinaryFile.Text = s;
+
+                //string name = Path.GetFileName(ofd.FileName);
+                string name = ofd.FileName;
+                string content = File.ReadAllText(ofd.FileName);
+
+                SqlCommand insert = new SqlCommand("INSERT INTO binaryfile (bf_name, bf_content) VALUES ('" +
+                    name + "','" + content + "')", con);
+                insert.ExecuteNonQuery();
+                //    string asci = File.ReadAllText(ofd.FileName);
+                //    string s = BinaryToString(asci);
+                //    txtBinaryFile.Text = s;
+                
             }
+            con.Close();
+            
+        }
+
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+            var cell = dataGridView1.Rows[e.RowIndex].Cells[0].Value;
+            Process.Start(cell.ToString());
+        }
+
+        private void pbUpload_LoadCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        {
+            this.Refresh();
+            Application.DoEvents();
         }
     }
 }

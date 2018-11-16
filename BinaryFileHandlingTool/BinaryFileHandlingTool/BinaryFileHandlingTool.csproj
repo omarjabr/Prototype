@@ -46,6 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BFHTDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BFHTDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BFHT_DBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BFHT_DBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +77,28 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="BFHTDataSet.xsc">
+      <DependentUpon>BFHTDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BFHTDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BFHTDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BFHTDataSet.xss">
+      <DependentUpon>BFHTDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BFHT_DBDataSet.xsc">
+      <DependentUpon>BFHT_DBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BFHT_DBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BFHT_DBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BFHT_DBDataSet.xss">
+      <DependentUpon>BFHT_DBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
