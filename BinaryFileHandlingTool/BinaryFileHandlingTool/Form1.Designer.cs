@@ -44,19 +44,25 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.binaryfileBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bFHTDataSet = new BinaryFileHandlingTool.BFHTDataSet();
             this.bFHT_DBDataSet = new BinaryFileHandlingTool.BFHT_DBDataSet();
             this.binaryfilesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.binaryfilesTableAdapter = new BinaryFileHandlingTool.BFHT_DBDataSetTableAdapters.binaryfilesTableAdapter();
-            this.bFHTDataSet = new BinaryFileHandlingTool.BFHTDataSet();
-            this.binaryfileBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.binaryfileTableAdapter = new BinaryFileHandlingTool.BFHTDataSetTableAdapters.binaryfileTableAdapter();
+            this.bFHTDataSet1 = new BinaryFileHandlingTool.BFHTDataSet1();
+            this.binaryfileBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.binaryfileTableAdapter1 = new BinaryFileHandlingTool.BFHTDataSet1TableAdapters.binaryfileTableAdapter();
             this.bfnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbUpload)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.binaryfileBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bFHTDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bFHT_DBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.binaryfilesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bFHTDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.binaryfileBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bFHTDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.binaryfileBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSave
@@ -177,7 +183,6 @@
             this.pbUpload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbUpload.TabIndex = 28;
             this.pbUpload.TabStop = false;
-            this.pbUpload.LoadCompleted += new System.ComponentModel.AsyncCompletedEventHandler(this.pbUpload_LoadCompleted);
             this.pbUpload.Click += new System.EventHandler(this.pbUpload_Click);
             // 
             // label2
@@ -197,14 +202,25 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.bfnameDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.binaryfileBindingSource;
+            this.bfnameDataGridViewTextBoxColumn,
+            this.Column1});
+            this.dataGridView1.DataSource = this.binaryfileBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(12, 81);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(245, 109);
             this.dataGridView1.TabIndex = 31;
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
+            // 
+            // binaryfileBindingSource
+            // 
+            this.binaryfileBindingSource.DataMember = "binaryfile";
+            this.binaryfileBindingSource.DataSource = this.bFHTDataSet;
+            // 
+            // bFHTDataSet
+            // 
+            this.bFHTDataSet.DataSetName = "BFHTDataSet";
+            this.bFHTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bFHT_DBDataSet
             // 
@@ -220,19 +236,23 @@
             // 
             this.binaryfilesTableAdapter.ClearBeforeFill = true;
             // 
-            // bFHTDataSet
-            // 
-            this.bFHTDataSet.DataSetName = "BFHTDataSet";
-            this.bFHTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // binaryfileBindingSource
-            // 
-            this.binaryfileBindingSource.DataMember = "binaryfile";
-            this.binaryfileBindingSource.DataSource = this.bFHTDataSet;
-            // 
             // binaryfileTableAdapter
             // 
             this.binaryfileTableAdapter.ClearBeforeFill = true;
+            // 
+            // bFHTDataSet1
+            // 
+            this.bFHTDataSet1.DataSetName = "BFHTDataSet1";
+            this.bFHTDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // binaryfileBindingSource1
+            // 
+            this.binaryfileBindingSource1.DataMember = "binaryfile";
+            this.binaryfileBindingSource1.DataSource = this.bFHTDataSet1;
+            // 
+            // binaryfileTableAdapter1
+            // 
+            this.binaryfileTableAdapter1.ClearBeforeFill = true;
             // 
             // bfnameDataGridViewTextBoxColumn
             // 
@@ -241,6 +261,14 @@
             this.bfnameDataGridViewTextBoxColumn.HeaderText = "File name";
             this.bfnameDataGridViewTextBoxColumn.Name = "bfnameDataGridViewTextBoxColumn";
             this.bfnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "bf_ID";
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
             // 
             // Form1
             // 
@@ -269,10 +297,12 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbUpload)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.binaryfileBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bFHTDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bFHT_DBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.binaryfilesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bFHTDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.binaryfileBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bFHTDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.binaryfileBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,7 +330,11 @@
         private BFHTDataSet bFHTDataSet;
         private System.Windows.Forms.BindingSource binaryfileBindingSource;
         private BFHTDataSetTableAdapters.binaryfileTableAdapter binaryfileTableAdapter;
+        private BFHTDataSet1 bFHTDataSet1;
+        private System.Windows.Forms.BindingSource binaryfileBindingSource1;
+        private BFHTDataSet1TableAdapters.binaryfileTableAdapter binaryfileTableAdapter1;
         private System.Windows.Forms.DataGridViewTextBoxColumn bfnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }
 

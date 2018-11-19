@@ -51,6 +51,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BFHTDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="BFHTDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BFHTDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="BFHT_DBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -87,6 +92,17 @@
     </None>
     <None Include="BFHTDataSet.xss">
       <DependentUpon>BFHTDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BFHTDataSet1.xsc">
+      <DependentUpon>BFHTDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BFHTDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BFHTDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BFHTDataSet1.xss">
+      <DependentUpon>BFHTDataSet1.xsd</DependentUpon>
     </None>
     <None Include="BFHT_DBDataSet.xsc">
       <DependentUpon>BFHT_DBDataSet.xsd</DependentUpon>
