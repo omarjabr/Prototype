@@ -87,10 +87,27 @@ namespace BinaryFileHandlingTool
             sd.FilterIndex = 2;
             if (sd.ShowDialog() == DialogResult.OK)
             {
-                using (StreamWriter sw = new StreamWriter(sd.FileName))
+                con.Open();
+                int row = dataGridView2.CurrentCell.RowIndex;
+                string id = dataGridView2.Rows[row].Cells["tf_ID"].Value.ToString();
+                SqlCommand read = new SqlCommand("SELECT tf_content FROM textfiles WHERE tf_ID = '" + id + "'", con);
+                SqlDataReader reader = read.ExecuteReader();
+                if (reader.Read() == true)
                 {
-                    //  sw.Write(txtTextFile.Text);
+                    string content = reader["tf_content"].ToString();
+                    using (StreamWriter sw = new StreamWriter(sd.FileName))
+                    {
+                        sw.Write(content);
+                    }
+                    reader.Close();
                 }
+                SqlCommand delete = new SqlCommand("DELETE FROM textfiles WHERE tf_ID = '" + id + "'", con);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT tf_name FROM textfiles", con);
+                DataSet ds = new DataSet();
+                da.Fill(ds, "textfiles");
+                dataGridView2.DataSource = ds;
+                dataGridView2.DataMember = "textfiles";
+                con.Close();
             }
         }
 
@@ -174,9 +191,9 @@ namespace BinaryFileHandlingTool
                         "','" + binaryText + "')", con);
                     reader.Close();
                     insert.ExecuteNonQuery();
-                    
+
                 }
-                
+
                 SqlDataAdapter da = new SqlDataAdapter("SELECT tf_name FROM textfiles", con);
                 DataSet ds = new DataSet();
                 da.Fill(ds, "textfiles");
