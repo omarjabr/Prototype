@@ -20,12 +20,14 @@ namespace BinaryFileHandlingTool
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'bFHTDataSet3.textfiles' table. You can move, or remove it, as needed.
+            this.textfilesTableAdapter.Fill(this.bFHTDataSet3.textfiles);
+            // TODO: This line of code loads data into the 'bFHTDataSet2.textfile' table. You can move, or remove it, as needed.
             // TODO: This line of code loads data into the 'bFHTDataSet1.binaryfile' table. You can move, or remove it, as needed.
             this.binaryfileTableAdapter1.Fill(this.bFHTDataSet1.binaryfile);
             // TODO: This line of code loads data into the 'bFHTDataSet.binaryfile' table. You can move, or remove it, as needed.
             this.binaryfileTableAdapter.Fill(this.bFHTDataSet.binaryfile);
             // TODO: This line of code loads data into the 'bFHT_DBDataSet.binaryfiles' table. You can move, or remove it, as needed.
-            this.binaryfilesTableAdapter.Fill(this.bFHT_DBDataSet.binaryfiles);
 
             dataGridView1.MouseClick += new MouseEventHandler(dataGridView1_MouseClick);
         }
@@ -54,9 +56,10 @@ namespace BinaryFileHandlingTool
                 if (MessageBox.Show("Are you sure you want to delete this file?", "Delete File", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     int row = dataGridView1.CurrentCell.RowIndex;
-                    string id = dataGridView1.Rows[row].Cells["Column1"].Value.ToString();
+                    string id = dataGridView1.Rows[row].Cells["bf_ID"].Value.ToString();
                     SqlCommand delete = new SqlCommand("DELETE FROM binaryfile WHERE bf_ID = '" + id + "'", con);
                     delete.ExecuteNonQuery();
+                    // Refresh Data Grid View
 
                 }
             }
@@ -86,7 +89,7 @@ namespace BinaryFileHandlingTool
             {
                 using (StreamWriter sw = new StreamWriter(sd.FileName))
                 {
-                    sw.Write(txtTextFile.Text);
+                    //  sw.Write(txtTextFile.Text);
                 }
             }
         }
@@ -124,11 +127,6 @@ namespace BinaryFileHandlingTool
             txtUsedFormats.ScrollBars = ScrollBars.Both;
         }
 
-        private void txtTextFile_TextChanged(object sender, EventArgs e)
-        {
-            txtTextFile.ScrollBars = ScrollBars.Both;
-        }
-
         private void pbUpload_Click(object sender, EventArgs e)
         {
             con.Open();
@@ -136,16 +134,12 @@ namespace BinaryFileHandlingTool
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                //string name = Path.GetFileName(ofd.FileName);
                 string name = ofd.FileName;
                 string content = File.ReadAllText(ofd.FileName);
 
                 SqlCommand insert = new SqlCommand("INSERT INTO binaryfile (bf_name, bf_content) VALUES ('" +
                     name + "','" + content + "')", con);
                 insert.ExecuteNonQuery();
-                //    string asci = File.ReadAllText(ofd.FileName);
-                //    string s = BinaryToString(asci);
-                //    txtBinaryFile.Text = s;
             }
             SqlDataAdapter da = new SqlDataAdapter("SELECT bf_name FROM binaryfile", con);
             DataSet ds = new DataSet();
@@ -161,5 +155,36 @@ namespace BinaryFileHandlingTool
             Process.Start(cell.ToString());
         }
 
+        private void pcConvert_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            int row = dataGridView1.RowCount;
+
+            for (int i = 0; i < row; i++)
+            {
+                string name = dataGridView1.Rows[i].Cells["bf_name"].Value.ToString();
+                string id = dataGridView1.Rows[i].Cells["bf_ID"].Value.ToString();
+                SqlCommand read = new SqlCommand("SELECT bf_content FROM binaryfile WHERE bf_ID = '" + id + "'", con);
+                SqlDataReader reader = read.ExecuteReader();
+                if (reader.Read() == true)
+                {
+                    string asci = File.ReadAllText(name);
+                    string binaryText = BinaryToString(asci);
+                    SqlCommand insert = new SqlCommand("INSERT INTO textfiles (tf_name, tf_content) VALUES ('" + name +
+                        "','" + binaryText + "')", con);
+                    reader.Close();
+                    insert.ExecuteNonQuery();
+                    
+                }
+                
+                SqlDataAdapter da = new SqlDataAdapter("SELECT tf_name FROM textfiles", con);
+                DataSet ds = new DataSet();
+                da.Fill(ds, "textfiles");
+                dataGridView2.DataSource = ds;
+                dataGridView2.DataMember = "textfiles";
+            }
+
+            con.Close();
+        }
     }
 }

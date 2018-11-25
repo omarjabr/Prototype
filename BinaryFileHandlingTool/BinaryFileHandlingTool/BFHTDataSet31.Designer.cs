@@ -20,17 +20,17 @@ namespace BinaryFileHandlingTool {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("BFHT_DBDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("BFHTDataSet3")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class BFHT_DBDataSet : global::System.Data.DataSet {
+    public partial class BFHTDataSet3 : global::System.Data.DataSet {
         
-        private binaryfilesDataTable tablebinaryfiles;
+        private textfilesDataTable tabletextfiles;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public BFHT_DBDataSet() {
+        public BFHTDataSet3() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace BinaryFileHandlingTool {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected BFHT_DBDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected BFHTDataSet3(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace BinaryFileHandlingTool {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["binaryfiles"] != null)) {
-                    base.Tables.Add(new binaryfilesDataTable(ds.Tables["binaryfiles"]));
+                if ((ds.Tables["textfiles"] != null)) {
+                    base.Tables.Add(new textfilesDataTable(ds.Tables["textfiles"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace BinaryFileHandlingTool {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public binaryfilesDataTable binaryfiles {
+        public textfilesDataTable textfiles {
             get {
-                return this.tablebinaryfiles;
+                return this.tabletextfiles;
             }
         }
         
@@ -127,7 +127,7 @@ namespace BinaryFileHandlingTool {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            BFHT_DBDataSet cln = ((BFHT_DBDataSet)(base.Clone()));
+            BFHTDataSet3 cln = ((BFHTDataSet3)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace BinaryFileHandlingTool {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["binaryfiles"] != null)) {
-                    base.Tables.Add(new binaryfilesDataTable(ds.Tables["binaryfiles"]));
+                if ((ds.Tables["textfiles"] != null)) {
+                    base.Tables.Add(new textfilesDataTable(ds.Tables["textfiles"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace BinaryFileHandlingTool {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablebinaryfiles = ((binaryfilesDataTable)(base.Tables["binaryfiles"]));
+            this.tabletextfiles = ((textfilesDataTable)(base.Tables["textfiles"]));
             if ((initTable == true)) {
-                if ((this.tablebinaryfiles != null)) {
-                    this.tablebinaryfiles.InitVars();
+                if ((this.tabletextfiles != null)) {
+                    this.tabletextfiles.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace BinaryFileHandlingTool {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "BFHT_DBDataSet";
+            this.DataSetName = "BFHTDataSet3";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/BFHT_DBDataSet.xsd";
+            this.Namespace = "http://tempuri.org/BFHTDataSet31.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablebinaryfiles = new binaryfilesDataTable();
-            base.Tables.Add(this.tablebinaryfiles);
+            this.tabletextfiles = new textfilesDataTable();
+            base.Tables.Add(this.tabletextfiles);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializebinaryfiles() {
+        private bool ShouldSerializetextfiles() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace BinaryFileHandlingTool {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            BFHT_DBDataSet ds = new BFHT_DBDataSet();
+            BFHTDataSet3 ds = new BFHTDataSet3();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,25 +270,23 @@ namespace BinaryFileHandlingTool {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void binaryfilesRowChangeEventHandler(object sender, binaryfilesRowChangeEvent e);
+        public delegate void textfilesRowChangeEventHandler(object sender, textfilesRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class binaryfilesDataTable : global::System.Data.TypedTableBase<binaryfilesRow> {
+        public partial class textfilesDataTable : global::System.Data.TypedTableBase<textfilesRow> {
             
-            private global::System.Data.DataColumn columnbf_ID;
+            private global::System.Data.DataColumn columntf_ID;
             
-            private global::System.Data.DataColumn columnbf_name;
-            
-            private global::System.Data.DataColumn columnbf_content;
+            private global::System.Data.DataColumn columntf_name;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public binaryfilesDataTable() {
-                this.TableName = "binaryfiles";
+            public textfilesDataTable() {
+                this.TableName = "textfiles";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -296,7 +294,7 @@ namespace BinaryFileHandlingTool {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal binaryfilesDataTable(global::System.Data.DataTable table) {
+            internal textfilesDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -313,32 +311,24 @@ namespace BinaryFileHandlingTool {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected binaryfilesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected textfilesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn bf_IDColumn {
+            public global::System.Data.DataColumn tf_IDColumn {
                 get {
-                    return this.columnbf_ID;
+                    return this.columntf_ID;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn bf_nameColumn {
+            public global::System.Data.DataColumn tf_nameColumn {
                 get {
-                    return this.columnbf_name;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn bf_contentColumn {
-                get {
-                    return this.columnbf_content;
+                    return this.columntf_name;
                 }
             }
             
@@ -353,54 +343,53 @@ namespace BinaryFileHandlingTool {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public binaryfilesRow this[int index] {
+            public textfilesRow this[int index] {
                 get {
-                    return ((binaryfilesRow)(this.Rows[index]));
+                    return ((textfilesRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event binaryfilesRowChangeEventHandler binaryfilesRowChanging;
+            public event textfilesRowChangeEventHandler textfilesRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event binaryfilesRowChangeEventHandler binaryfilesRowChanged;
+            public event textfilesRowChangeEventHandler textfilesRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event binaryfilesRowChangeEventHandler binaryfilesRowDeleting;
+            public event textfilesRowChangeEventHandler textfilesRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event binaryfilesRowChangeEventHandler binaryfilesRowDeleted;
+            public event textfilesRowChangeEventHandler textfilesRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddbinaryfilesRow(binaryfilesRow row) {
+            public void AddtextfilesRow(textfilesRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public binaryfilesRow AddbinaryfilesRow(string bf_name, string bf_content) {
-                binaryfilesRow rowbinaryfilesRow = ((binaryfilesRow)(this.NewRow()));
+            public textfilesRow AddtextfilesRow(string tf_name) {
+                textfilesRow rowtextfilesRow = ((textfilesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        bf_name,
-                        bf_content};
-                rowbinaryfilesRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowbinaryfilesRow);
-                return rowbinaryfilesRow;
+                        tf_name};
+                rowtextfilesRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowtextfilesRow);
+                return rowtextfilesRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public binaryfilesRow FindBybf_ID(int bf_ID) {
-                return ((binaryfilesRow)(this.Rows.Find(new object[] {
-                            bf_ID})));
+            public textfilesRow FindBytf_ID(int tf_ID) {
+                return ((textfilesRow)(this.Rows.Find(new object[] {
+                            tf_ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                binaryfilesDataTable cln = ((binaryfilesDataTable)(base.Clone()));
+                textfilesDataTable cln = ((textfilesDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -408,64 +397,59 @@ namespace BinaryFileHandlingTool {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new binaryfilesDataTable();
+                return new textfilesDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnbf_ID = base.Columns["bf_ID"];
-                this.columnbf_name = base.Columns["bf_name"];
-                this.columnbf_content = base.Columns["bf_content"];
+                this.columntf_ID = base.Columns["tf_ID"];
+                this.columntf_name = base.Columns["tf_name"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnbf_ID = new global::System.Data.DataColumn("bf_ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnbf_ID);
-                this.columnbf_name = new global::System.Data.DataColumn("bf_name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnbf_name);
-                this.columnbf_content = new global::System.Data.DataColumn("bf_content", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnbf_content);
+                this.columntf_ID = new global::System.Data.DataColumn("tf_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntf_ID);
+                this.columntf_name = new global::System.Data.DataColumn("tf_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntf_name);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnbf_ID}, true));
-                this.columnbf_ID.AutoIncrement = true;
-                this.columnbf_ID.AutoIncrementSeed = -1;
-                this.columnbf_ID.AutoIncrementStep = -1;
-                this.columnbf_ID.AllowDBNull = false;
-                this.columnbf_ID.ReadOnly = true;
-                this.columnbf_ID.Unique = true;
-                this.columnbf_name.AllowDBNull = false;
-                this.columnbf_name.MaxLength = 50;
-                this.columnbf_content.AllowDBNull = false;
-                this.columnbf_content.MaxLength = 2147483647;
+                                this.columntf_ID}, true));
+                this.columntf_ID.AutoIncrement = true;
+                this.columntf_ID.AutoIncrementSeed = -1;
+                this.columntf_ID.AutoIncrementStep = -1;
+                this.columntf_ID.AllowDBNull = false;
+                this.columntf_ID.ReadOnly = true;
+                this.columntf_ID.Unique = true;
+                this.columntf_name.AllowDBNull = false;
+                this.columntf_name.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public binaryfilesRow NewbinaryfilesRow() {
-                return ((binaryfilesRow)(this.NewRow()));
+            public textfilesRow NewtextfilesRow() {
+                return ((textfilesRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new binaryfilesRow(builder);
+                return new textfilesRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(binaryfilesRow);
+                return typeof(textfilesRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.binaryfilesRowChanged != null)) {
-                    this.binaryfilesRowChanged(this, new binaryfilesRowChangeEvent(((binaryfilesRow)(e.Row)), e.Action));
+                if ((this.textfilesRowChanged != null)) {
+                    this.textfilesRowChanged(this, new textfilesRowChangeEvent(((textfilesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -473,8 +457,8 @@ namespace BinaryFileHandlingTool {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.binaryfilesRowChanging != null)) {
-                    this.binaryfilesRowChanging(this, new binaryfilesRowChangeEvent(((binaryfilesRow)(e.Row)), e.Action));
+                if ((this.textfilesRowChanging != null)) {
+                    this.textfilesRowChanging(this, new textfilesRowChangeEvent(((textfilesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -482,8 +466,8 @@ namespace BinaryFileHandlingTool {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.binaryfilesRowDeleted != null)) {
-                    this.binaryfilesRowDeleted(this, new binaryfilesRowChangeEvent(((binaryfilesRow)(e.Row)), e.Action));
+                if ((this.textfilesRowDeleted != null)) {
+                    this.textfilesRowDeleted(this, new textfilesRowChangeEvent(((textfilesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -491,14 +475,14 @@ namespace BinaryFileHandlingTool {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.binaryfilesRowDeleting != null)) {
-                    this.binaryfilesRowDeleting(this, new binaryfilesRowChangeEvent(((binaryfilesRow)(e.Row)), e.Action));
+                if ((this.textfilesRowDeleting != null)) {
+                    this.textfilesRowDeleting(this, new textfilesRowChangeEvent(((textfilesRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemovebinaryfilesRow(binaryfilesRow row) {
+            public void RemovetextfilesRow(textfilesRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -507,7 +491,7 @@ namespace BinaryFileHandlingTool {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BFHT_DBDataSet ds = new BFHT_DBDataSet();
+                BFHTDataSet3 ds = new BFHTDataSet3();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -525,7 +509,7 @@ namespace BinaryFileHandlingTool {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "binaryfilesDataTable";
+                attribute2.FixedValue = "textfilesDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -569,47 +553,36 @@ namespace BinaryFileHandlingTool {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class binaryfilesRow : global::System.Data.DataRow {
+        public partial class textfilesRow : global::System.Data.DataRow {
             
-            private binaryfilesDataTable tablebinaryfiles;
+            private textfilesDataTable tabletextfiles;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal binaryfilesRow(global::System.Data.DataRowBuilder rb) : 
+            internal textfilesRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablebinaryfiles = ((binaryfilesDataTable)(this.Table));
+                this.tabletextfiles = ((textfilesDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int bf_ID {
+            public int tf_ID {
                 get {
-                    return ((int)(this[this.tablebinaryfiles.bf_IDColumn]));
+                    return ((int)(this[this.tabletextfiles.tf_IDColumn]));
                 }
                 set {
-                    this[this.tablebinaryfiles.bf_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string bf_name {
-                get {
-                    return ((string)(this[this.tablebinaryfiles.bf_nameColumn]));
-                }
-                set {
-                    this[this.tablebinaryfiles.bf_nameColumn] = value;
+                    this[this.tabletextfiles.tf_IDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string bf_content {
+            public string tf_name {
                 get {
-                    return ((string)(this[this.tablebinaryfiles.bf_contentColumn]));
+                    return ((string)(this[this.tabletextfiles.tf_nameColumn]));
                 }
                 set {
-                    this[this.tablebinaryfiles.bf_contentColumn] = value;
+                    this[this.tabletextfiles.tf_nameColumn] = value;
                 }
             }
         }
@@ -618,22 +591,22 @@ namespace BinaryFileHandlingTool {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class binaryfilesRowChangeEvent : global::System.EventArgs {
+        public class textfilesRowChangeEvent : global::System.EventArgs {
             
-            private binaryfilesRow eventRow;
+            private textfilesRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public binaryfilesRowChangeEvent(binaryfilesRow row, global::System.Data.DataRowAction action) {
+            public textfilesRowChangeEvent(textfilesRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public binaryfilesRow Row {
+            public textfilesRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -649,7 +622,7 @@ namespace BinaryFileHandlingTool {
         }
     }
 }
-namespace BinaryFileHandlingTool.BFHT_DBDataSetTableAdapters {
+namespace BinaryFileHandlingTool.BFHTDataSet3TableAdapters {
     
     
     /// <summary>
@@ -661,7 +634,7 @@ namespace BinaryFileHandlingTool.BFHT_DBDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class binaryfilesTableAdapter : global::System.ComponentModel.Component {
+    public partial class textfilesTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -675,7 +648,7 @@ namespace BinaryFileHandlingTool.BFHT_DBDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public binaryfilesTableAdapter() {
+        public textfilesTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -772,44 +745,34 @@ namespace BinaryFileHandlingTool.BFHT_DBDataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "binaryfiles";
-            tableMapping.ColumnMappings.Add("bf_ID", "bf_ID");
-            tableMapping.ColumnMappings.Add("bf_name", "bf_name");
-            tableMapping.ColumnMappings.Add("bf_content", "bf_content");
+            tableMapping.DataSetTable = "textfiles";
+            tableMapping.ColumnMappings.Add("tf_ID", "tf_ID");
+            tableMapping.ColumnMappings.Add("tf_name", "tf_name");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[binaryfiles] WHERE (([bf_ID] = @Original_bf_ID) AND ([bf_name]" +
-                " = @Original_bf_name))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[textfiles] WHERE (([tf_ID] = @Original_tf_ID) AND ([tf_name] =" +
+                " @Original_tf_name))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bf_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bf_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bf_name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bf_name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[binaryfiles] ([bf_name], [bf_content]) VALUES (@bf_name, @bf_c" +
-                "ontent);\r\nSELECT bf_ID, bf_name, bf_content FROM binaryfiles WHERE (bf_ID = SCOP" +
-                "E_IDENTITY())";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bf_name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bf_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bf_content", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bf_content", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_tf_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tf_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_tf_name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tf_name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[binaryfiles] SET [bf_name] = @bf_name, [bf_content] = @bf_content W" +
-                "HERE (([bf_ID] = @Original_bf_ID) AND ([bf_name] = @Original_bf_name));\r\nSELECT " +
-                "bf_ID, bf_name, bf_content FROM binaryfiles WHERE (bf_ID = @bf_ID)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[textfiles] SET [tf_name] = @tf_name WHERE (([tf_ID] = @Original_tf_" +
+                "ID) AND ([tf_name] = @Original_tf_name));\r\nSELECT tf_ID, tf_name FROM textfiles " +
+                "WHERE (tf_ID = @tf_ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bf_name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bf_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bf_content", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bf_content", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bf_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bf_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bf_name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bf_name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bf_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "bf_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tf_name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tf_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_tf_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tf_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_tf_name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tf_name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tf_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "tf_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BinaryFileHandlingTool.Properties.Settings.Default.BFHT_DBConnectionString;
+            this._connection.ConnectionString = global::BinaryFileHandlingTool.Properties.Settings.Default.BFHTConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -818,7 +781,7 @@ namespace BinaryFileHandlingTool.BFHT_DBDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT bf_ID, bf_name, bf_content FROM dbo.binaryfiles";
+            this._commandCollection[0].CommandText = "SELECT tf_ID, tf_name FROM dbo.textfiles";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -826,7 +789,7 @@ namespace BinaryFileHandlingTool.BFHT_DBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BFHT_DBDataSet.binaryfilesDataTable dataTable) {
+        public virtual int Fill(BFHTDataSet3.textfilesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -839,9 +802,9 @@ namespace BinaryFileHandlingTool.BFHT_DBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BFHT_DBDataSet.binaryfilesDataTable GetData() {
+        public virtual BFHTDataSet3.textfilesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            BFHT_DBDataSet.binaryfilesDataTable dataTable = new BFHT_DBDataSet.binaryfilesDataTable();
+            BFHTDataSet3.textfilesDataTable dataTable = new BFHTDataSet3.textfilesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -849,15 +812,15 @@ namespace BinaryFileHandlingTool.BFHT_DBDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BFHT_DBDataSet.binaryfilesDataTable dataTable) {
+        public virtual int Update(BFHTDataSet3.textfilesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BFHT_DBDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "binaryfiles");
+        public virtual int Update(BFHTDataSet3 dataSet) {
+            return this.Adapter.Update(dataSet, "textfiles");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -879,13 +842,13 @@ namespace BinaryFileHandlingTool.BFHT_DBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_bf_ID, string Original_bf_name) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_bf_ID));
-            if ((Original_bf_name == null)) {
-                throw new global::System.ArgumentNullException("Original_bf_name");
+        public virtual int Delete(int Original_tf_ID, string Original_tf_name) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_tf_ID));
+            if ((Original_tf_name == null)) {
+                throw new global::System.ArgumentNullException("Original_tf_name");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_bf_name));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_tf_name));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -906,61 +869,22 @@ namespace BinaryFileHandlingTool.BFHT_DBDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string bf_name, string bf_content) {
-            if ((bf_name == null)) {
-                throw new global::System.ArgumentNullException("bf_name");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(bf_name));
-            }
-            if ((bf_content == null)) {
-                throw new global::System.ArgumentNullException("bf_content");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(bf_content));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string bf_name, string bf_content, int Original_bf_ID, string Original_bf_name, int bf_ID) {
-            if ((bf_name == null)) {
-                throw new global::System.ArgumentNullException("bf_name");
+        public virtual int Update(string tf_name, int Original_tf_ID, string Original_tf_name, int tf_ID) {
+            if ((tf_name == null)) {
+                throw new global::System.ArgumentNullException("tf_name");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(bf_name));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(tf_name));
             }
-            if ((bf_content == null)) {
-                throw new global::System.ArgumentNullException("bf_content");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(bf_content));
-            }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_bf_ID));
-            if ((Original_bf_name == null)) {
-                throw new global::System.ArgumentNullException("Original_bf_name");
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_tf_ID));
+            if ((Original_tf_name == null)) {
+                throw new global::System.ArgumentNullException("Original_tf_name");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_bf_name));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Original_tf_name));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(bf_ID));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(tf_ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -981,8 +905,8 @@ namespace BinaryFileHandlingTool.BFHT_DBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string bf_name, string bf_content, int Original_bf_ID, string Original_bf_name) {
-            return this.Update(bf_name, bf_content, Original_bf_ID, Original_bf_name, Original_bf_ID);
+        public virtual int Update(string tf_name, int Original_tf_ID, string Original_tf_name) {
+            return this.Update(tf_name, Original_tf_ID, Original_tf_name, Original_tf_ID);
         }
     }
     
@@ -998,7 +922,7 @@ namespace BinaryFileHandlingTool.BFHT_DBDataSetTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private binaryfilesTableAdapter _binaryfilesTableAdapter;
+        private textfilesTableAdapter _textfilesTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1020,12 +944,12 @@ namespace BinaryFileHandlingTool.BFHT_DBDataSetTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public binaryfilesTableAdapter binaryfilesTableAdapter {
+        public textfilesTableAdapter textfilesTableAdapter {
             get {
-                return this._binaryfilesTableAdapter;
+                return this._textfilesTableAdapter;
             }
             set {
-                this._binaryfilesTableAdapter = value;
+                this._textfilesTableAdapter = value;
             }
         }
         
@@ -1048,9 +972,9 @@ namespace BinaryFileHandlingTool.BFHT_DBDataSetTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._binaryfilesTableAdapter != null) 
-                            && (this._binaryfilesTableAdapter.Connection != null))) {
-                    return this._binaryfilesTableAdapter.Connection;
+                if (((this._textfilesTableAdapter != null) 
+                            && (this._textfilesTableAdapter.Connection != null))) {
+                    return this._textfilesTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1065,7 +989,7 @@ namespace BinaryFileHandlingTool.BFHT_DBDataSetTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._binaryfilesTableAdapter != null)) {
+                if ((this._textfilesTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1077,14 +1001,14 @@ namespace BinaryFileHandlingTool.BFHT_DBDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateUpdatedRows(BFHT_DBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(BFHTDataSet3 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._binaryfilesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.binaryfiles.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._textfilesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.textfiles.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._binaryfilesTableAdapter.Update(updatedRows));
+                    result = (result + this._textfilesTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1096,13 +1020,13 @@ namespace BinaryFileHandlingTool.BFHT_DBDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateInsertedRows(BFHT_DBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(BFHTDataSet3 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._binaryfilesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.binaryfiles.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._textfilesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.textfiles.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._binaryfilesTableAdapter.Update(addedRows));
+                    result = (result + this._textfilesTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1114,13 +1038,13 @@ namespace BinaryFileHandlingTool.BFHT_DBDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateDeletedRows(BFHT_DBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(BFHTDataSet3 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._binaryfilesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.binaryfiles.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._textfilesTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.textfiles.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._binaryfilesTableAdapter.Update(deletedRows));
+                    result = (result + this._textfilesTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1156,15 +1080,15 @@ namespace BinaryFileHandlingTool.BFHT_DBDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public virtual int UpdateAll(BFHT_DBDataSet dataSet) {
+        public virtual int UpdateAll(BFHTDataSet3 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._binaryfilesTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._binaryfilesTableAdapter.Connection) == false))) {
+            if (((this._textfilesTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._textfilesTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1200,13 +1124,13 @@ namespace BinaryFileHandlingTool.BFHT_DBDataSetTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._binaryfilesTableAdapter != null)) {
-                    revertConnections.Add(this._binaryfilesTableAdapter, this._binaryfilesTableAdapter.Connection);
-                    this._binaryfilesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._binaryfilesTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._binaryfilesTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._binaryfilesTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._binaryfilesTableAdapter.Adapter);
+                if ((this._textfilesTableAdapter != null)) {
+                    revertConnections.Add(this._textfilesTableAdapter, this._textfilesTableAdapter.Connection);
+                    this._textfilesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._textfilesTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._textfilesTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._textfilesTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._textfilesTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1267,9 +1191,9 @@ namespace BinaryFileHandlingTool.BFHT_DBDataSetTableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._binaryfilesTableAdapter != null)) {
-                    this._binaryfilesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._binaryfilesTableAdapter]));
-                    this._binaryfilesTableAdapter.Transaction = null;
+                if ((this._textfilesTableAdapter != null)) {
+                    this._textfilesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._textfilesTableAdapter]));
+                    this._textfilesTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
