@@ -34,7 +34,6 @@
             this.lblBinary = new System.Windows.Forms.Label();
             this.lblNewFormat = new System.Windows.Forms.Label();
             this.txtFormat = new System.Windows.Forms.TextBox();
-            this.txtIterations = new System.Windows.Forms.TextBox();
             this.btnSaveFormat = new System.Windows.Forms.Button();
             this.txtUsedFormats = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -115,23 +114,10 @@
             this.txtFormat.TabIndex = 21;
             this.txtFormat.TextChanged += new System.EventHandler(this.txtFormat_TextChanged);
             // 
-            // txtIterations
-            // 
-            this.txtIterations.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIterations.ForeColor = System.Drawing.Color.Gray;
-            this.txtIterations.Location = new System.Drawing.Point(12, 288);
-            this.txtIterations.Name = "txtIterations";
-            this.txtIterations.Size = new System.Drawing.Size(245, 22);
-            this.txtIterations.TabIndex = 22;
-            this.txtIterations.Text = "Number of iterations";
-            this.txtIterations.TextChanged += new System.EventHandler(this.txtIterations_TextChanged);
-            this.txtIterations.Enter += new System.EventHandler(this.txtIterations_Enter);
-            this.txtIterations.Leave += new System.EventHandler(this.txtIterations_Leave);
-            // 
             // btnSaveFormat
             // 
             this.btnSaveFormat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSaveFormat.Location = new System.Drawing.Point(12, 316);
+            this.btnSaveFormat.Location = new System.Drawing.Point(12, 288);
             this.btnSaveFormat.Name = "btnSaveFormat";
             this.btnSaveFormat.Size = new System.Drawing.Size(121, 50);
             this.btnSaveFormat.TabIndex = 23;
@@ -141,7 +127,7 @@
             // txtUsedFormats
             // 
             this.txtUsedFormats.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsedFormats.Location = new System.Drawing.Point(12, 406);
+            this.txtUsedFormats.Location = new System.Drawing.Point(12, 374);
             this.txtUsedFormats.Multiline = true;
             this.txtUsedFormats.Name = "txtUsedFormats";
             this.txtUsedFormats.Size = new System.Drawing.Size(245, 65);
@@ -152,7 +138,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 382);
+            this.label1.Location = new System.Drawing.Point(11, 350);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(227, 21);
             this.label1.TabIndex = 25;
@@ -320,7 +306,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(572, 479);
+            this.ClientSize = new System.Drawing.Size(572, 450);
             this.Controls.Add(this.pcConvert);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
@@ -330,7 +316,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtUsedFormats);
             this.Controls.Add(this.btnSaveFormat);
-            this.Controls.Add(this.txtIterations);
             this.Controls.Add(this.txtFormat);
             this.Controls.Add(this.lblNewFormat);
             this.Controls.Add(this.lblBinary);
@@ -365,7 +350,6 @@
         private System.Windows.Forms.Label lblBinary;
         private System.Windows.Forms.Label lblNewFormat;
         private System.Windows.Forms.TextBox txtFormat;
-        private System.Windows.Forms.TextBox txtIterations;
         private System.Windows.Forms.Button btnSaveFormat;
         private System.Windows.Forms.TextBox txtUsedFormats;
         private System.Windows.Forms.Label label1;

@@ -117,29 +117,6 @@ namespace BinaryFileHandlingTool
             txtFormat.ScrollBars = ScrollBars.Both;
         }
 
-        private void txtIterations_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtIterations_Enter(object sender, EventArgs e)
-        {
-            if (txtIterations.Text == "Number of iterations")
-            {
-                txtIterations.Text = "";
-                txtIterations.ForeColor = Color.Black;
-            }
-        }
-
-        private void txtIterations_Leave(object sender, EventArgs e)
-        {
-            if (txtIterations.Text == "")
-            {
-                txtIterations.Text = "Number of iterations";
-                txtIterations.ForeColor = Color.Gray;
-            }
-        }
-
         private void txtUsedFormats_TextChanged(object sender, EventArgs e)
         {
             txtUsedFormats.ScrollBars = ScrollBars.Both;
@@ -207,7 +184,14 @@ namespace BinaryFileHandlingTool
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            int row = dataGridView2.RowCount;
+            if(row < 1)
+            {
+                if(MessageBox.Show("Are you sure you want to exit the application before saving?", "Close Application", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    Application.Exit();
+                }
+            }
         }
     }
 }
