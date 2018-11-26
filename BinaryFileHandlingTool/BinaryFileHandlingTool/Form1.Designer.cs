@@ -54,10 +54,10 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tf_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tf_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textfilesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bFHTDataSet3 = new BinaryFileHandlingTool.BFHTDataSet3();
             this.bFHTDataSet2 = new BinaryFileHandlingTool.BFHTDataSet2();
             this.pcConvert = new System.Windows.Forms.PictureBox();
-            this.bFHTDataSet3 = new BinaryFileHandlingTool.BFHTDataSet3();
-            this.textfilesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textfilesTableAdapter = new BinaryFileHandlingTool.BFHTDataSet3TableAdapters.textfilesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pbUpload)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -66,10 +66,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.binaryfileBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bFHTDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textfilesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bFHTDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bFHTDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcConvert)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bFHTDataSet3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textfilesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSave
@@ -285,6 +285,16 @@
             this.tf_name.Name = "tf_name";
             this.tf_name.ReadOnly = true;
             // 
+            // textfilesBindingSource
+            // 
+            this.textfilesBindingSource.DataMember = "textfiles";
+            this.textfilesBindingSource.DataSource = this.bFHTDataSet3;
+            // 
+            // bFHTDataSet3
+            // 
+            this.bFHTDataSet3.DataSetName = "BFHTDataSet3";
+            this.bFHTDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // bFHTDataSet2
             // 
             this.bFHTDataSet2.DataSetName = "BFHTDataSet2";
@@ -301,16 +311,6 @@
             this.pcConvert.TabIndex = 33;
             this.pcConvert.TabStop = false;
             this.pcConvert.Click += new System.EventHandler(this.pcConvert_Click);
-            // 
-            // bFHTDataSet3
-            // 
-            this.bFHTDataSet3.DataSetName = "BFHTDataSet3";
-            this.bFHTDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // textfilesBindingSource
-            // 
-            this.textfilesBindingSource.DataMember = "textfiles";
-            this.textfilesBindingSource.DataSource = this.bFHTDataSet3;
             // 
             // textfilesTableAdapter
             // 
@@ -341,6 +341,7 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Binary File Handling Tool";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbUpload)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -349,10 +350,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.binaryfileBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bFHTDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textfilesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bFHTDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bFHTDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcConvert)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bFHTDataSet3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textfilesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

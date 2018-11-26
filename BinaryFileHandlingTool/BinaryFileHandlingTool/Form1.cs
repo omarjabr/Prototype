@@ -102,6 +102,7 @@ namespace BinaryFileHandlingTool
                     reader.Close();
                 }
                 SqlCommand delete = new SqlCommand("DELETE FROM textfiles WHERE tf_ID = '" + id + "'", con);
+                delete.ExecuteNonQuery();
                 SqlDataAdapter da = new SqlDataAdapter("SELECT tf_name FROM textfiles", con);
                 DataSet ds = new DataSet();
                 da.Fill(ds, "textfiles");
@@ -202,6 +203,11 @@ namespace BinaryFileHandlingTool
             }
 
             con.Close();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
         }
     }
 }
